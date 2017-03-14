@@ -50,4 +50,11 @@ public class BinarySearchTest {
         assertThat(searchResult.isFound(), is (true));
         assertThat(searchResult.getPosition(), is ((seq.length - 1)/2));
     }
+
+    @Test
+    public void elementIsNotInSequence() throws Exception {
+        seq = new int[] {element + 69, element + 666, element + 1234};
+        searchResult = BinarySearch.search(element, seq);
+        assertThat(searchResult.isFound(), is (false));
+    }
 }
