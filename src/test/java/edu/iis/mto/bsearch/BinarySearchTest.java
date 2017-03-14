@@ -19,4 +19,11 @@ public class BinarySearchTest {
         searchResult = BinarySearch.search(element, seq);
         assertThat(searchResult.isFound(), is (true));
     }
+
+    @Test
+    public void elementNotInSequence() throws Exception {
+        seq = new int[] {element - 1};
+        searchResult = BinarySearch.search(element, seq);
+        assertThat(searchResult.isFound(), is (false));
+    }
 }
