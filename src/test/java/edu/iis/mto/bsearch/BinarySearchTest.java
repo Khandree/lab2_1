@@ -26,4 +26,12 @@ public class BinarySearchTest {
         searchResult = BinarySearch.search(element, seq);
         assertThat(searchResult.isFound(), is (false));
     }
+
+    @Test
+    public void elementIsFirstInSequence() throws Exception {
+        seq = new int[] {element, element + 666, element + 1234};
+        searchResult = BinarySearch.search(element, seq);
+        assertThat(searchResult.isFound(), is (true));
+        assertThat(searchResult.getPosition(), is (0));
+    }
 }
