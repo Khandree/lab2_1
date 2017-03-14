@@ -42,4 +42,12 @@ public class BinarySearchTest {
         assertThat(searchResult.isFound(), is (true));
         assertThat(searchResult.getPosition(), is (seq.length - 1));
     }
+
+    @Test
+    public void elementIsInCentreOfSequence() throws Exception {
+        seq = new int[] {element - 666, element, element + 1234};
+        searchResult = BinarySearch.search(element, seq);
+        assertThat(searchResult.isFound(), is (true));
+        assertThat(searchResult.getPosition(), is ((seq.length - 1)/2));
+    }
 }
