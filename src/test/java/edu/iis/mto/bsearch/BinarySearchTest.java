@@ -34,4 +34,12 @@ public class BinarySearchTest {
         assertThat(searchResult.isFound(), is (true));
         assertThat(searchResult.getPosition(), is (0));
     }
+
+    @Test
+    public void elementIsLastInSequence() throws Exception {
+        seq = new int[] {element - 666, element -456 , element};
+        searchResult = BinarySearch.search(element, seq);
+        assertThat(searchResult.isFound(), is (true));
+        assertThat(searchResult.getPosition(), is (seq.length - 1));
+    }
 }
