@@ -62,7 +62,15 @@ public class BinarySearchTest {
 
     @Test
     public void elementIsInThCentre() throws Exception {
-        seq = new int[]{element -3, element -2, element -1, element, element + 1, element + 2, element + 3};
+        seq = new int[]{element - 3, element - 2, element - 1, element, element + 1, element + 2, element + 3};
+        searchResult = BinarySearch.search(element, seq);
+        assertThat(searchResult.isFound(), is(true));
+        assertThat(searchResult.getPosition(), is (3));
+    }
+
+    @Test
+    public void elementIsInTheCentrePlus() throws Exception {
+        seq = new int[]{element - 6, element - 2, element - 1, element, element +9};
         searchResult = BinarySearch.search(element, seq);
         assertThat(searchResult.isFound(), is(true));
         assertThat(searchResult.getPosition(), is (3));
