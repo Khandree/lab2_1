@@ -5,9 +5,6 @@ import org.junit.Test;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
-/**
- * Created by Agata on 2017-03-14.
- */
 public class BinarySearchTest {
     int element = 1000;
     int seq[];
@@ -57,4 +54,9 @@ public class BinarySearchTest {
         searchResult = BinarySearch.search(element, seq);
         assertThat(searchResult.isFound(), is (false));
     }
+
+    @Test (expected = IllegalArgumentException.class)
+    public void exceptionWhenSequenceIsEmpty() throws Exception {
+                BinarySearch.search(5, new int[0]);
+            }
 }
