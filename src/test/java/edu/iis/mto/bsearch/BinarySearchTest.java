@@ -57,6 +57,14 @@ public class BinarySearchTest {
 
     @Test (expected = IllegalArgumentException.class)
     public void exceptionWhenSequenceIsEmpty() throws Exception {
-                BinarySearch.search(5, new int[0]);
-            }
+        BinarySearch.search(5, new int[0]);
+    }
+
+    @Test
+    public void elementIsInThCentre() throws Exception {
+        seq = new int[]{element -3, element -2, element -1, element, element + 1, element + 2, element + 3};
+        searchResult = BinarySearch.search(element, seq);
+        assertThat(searchResult.isFound(), is(true));
+        assertThat(searchResult.getPosition(), is (3));
+    }
 }
